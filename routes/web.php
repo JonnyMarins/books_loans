@@ -65,12 +65,3 @@ Route::post('/books/store', function (Request $request) {
 
     return redirect()->route('home')->with('success', 'Libro e autore salvati con successo!');
 })->name('books.store');
-
-Route::post('/user', function (Request $request) {
-    DB::table('users')->insert([
-        "name" => $request->name,
-        "email" => $request->email,
-        "password" => $request->password
-    ]);
-    return redirect()->route('home');
-})->name('users.store');
